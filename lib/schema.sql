@@ -25,9 +25,9 @@ CREATE TABLE characters
 
 CREATE TABLE books
   (id INTEGER PRIMARY KEY,
-    amount INTEGER,
-    user_id INTEGER,
-    project_id INTEGER);
+    title TEXT,
+    year INTEGER,
+    series.title INTEGER);
 
 CREATE TABLE character_books
   (id INTEGER PRIMARY KEY,
