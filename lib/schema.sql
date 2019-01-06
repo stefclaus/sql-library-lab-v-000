@@ -7,15 +7,12 @@ CREATE TABLE series
 
 CREATE TABLE sub_genre
   (id INTEGER PRIMARY KEY,
-    name TEXT,
-    age INTEGER);
+    name TEXT);
 
 
 CREATE TABLE authors
   (id INTEGER PRIMARY KEY,
-    amount INTEGER,
-    user_id INTEGER,
-    project_id INTEGER);
+    name INTEGER);
 
 CREATE TABLE books
   (id INTEGER PRIMARY KEY,
