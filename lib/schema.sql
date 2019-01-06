@@ -14,6 +14,15 @@ CREATE TABLE authors
   (id INTEGER PRIMARY KEY,
     name INTEGER);
 
+CREATE TABLE characters
+  (id INTEGER PRIMARY KEY,
+    name TEXT,
+    motto TEXT,
+    species TEXT,
+    author_name TEXT,
+    series_title TEXT);
+
+
 CREATE TABLE books
   (id INTEGER PRIMARY KEY,
     amount INTEGER,
@@ -22,6 +31,5 @@ CREATE TABLE books
 
 CREATE TABLE character_books
   (id INTEGER PRIMARY KEY,
-    amount INTEGER,
-    user_id INTEGER,
-    project_id INTEGER);
+    characters.id INTEGER,
+    books.id INTEGER);
