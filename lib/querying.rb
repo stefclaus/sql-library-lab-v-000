@@ -34,12 +34,12 @@ def select_series_title_with_most_human_characters
     GROUP BY series.title
       ORDER BY COUNT(characters.species) DESC
       LIMIT 1;"
-
 end
 
 def select_character_names_and_number_of_books_they_are_in
-  "SELECT characters.name, SUM(books.id)
-    FROM series JOIN books ON series.id = books.id
-      JOIN characters ON series.author_id = characters.author_id
-    GROUP BY characters.name;"
+  "SELECT characters.name, COUNT(character_books.book_id)
+    FROM character_books JOIN characters ON character_books.character_id = characters.id
+      JOIN books ON character_books.book_id = books.id
+    GROUP BY characters.name
+    ORDER BY COUNT(character_books.book_id) DESC;"
 end
